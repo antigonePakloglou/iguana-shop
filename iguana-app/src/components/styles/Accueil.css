@@ -1,0 +1,39 @@
+.textFamily {
+  font-family: "Felix Titling", sans-serif;
+}
+
+.textPresentation {
+  font-size: 3em;
+}
+
+.textRepartition{
+  margin-top: 1%;
+  font-size: 2em;
+}
+
+.spaceTop {
+  margin-top: 3%;
+}
+
+.lieux {
+  border: none;
+  background-color: #6990a1;
+  font-family: "Bell MT", sans-serif;
+  font-size: 20px;
+  margin-left: 5px;
+  padding: 5px;
+  border-radius: 15px;
+}
+
+.backgroundPres {
+ background-color:  #eed2cd;
+}
+
+.colorNav {
+  background-color: #12304c;
+  
+}
+
+.colorTextNav{
+  color: white;
+}

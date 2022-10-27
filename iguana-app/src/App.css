@@ -37,21 +37,24 @@
   }
 }
 
-.test {
+.testeu {
   box-shadow: 8px 5px 5px rgb(81, 81, 81);
   width: 25%;
  
 
   /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
 }
-.textNomIguane {
+
+
+.textFamily {
   font-family: "Felix Titling", sans-serif;
-  font-size: 28px;
 }
 
-.textDescIguane {
-  font-family: "Bernard MT Condensed", sans-serif;
-  font-size: 20px;
-}
+.titrePage {
+  font-family: "Felix Titling", sans-serif;
+  background-color: #eed2cd;
+  color : #12304c;
+  border-radius: 50px;
+  }
 
-.colorVille {color: #0e4ecf;}
+.textVille {text-decoration: underline;}

@@ -1,0 +1,47 @@
+.textNom {
+
+}
+
+.textColonnes{
+    font-family: "Bell MT", sans-serif;
+    font-size: 25px;
+   
+}
+
+.textTitresColonnes{
+    font-family: "Felix Titling", sans-serif;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 25px;
+   
+}
+
+.margesTitleCol{
+    padding-bottom:4%;
+}
+.margesColonnes{
+    
+    padding-bottom:8%;
+}
+
+.imageStyle {
+    float: right;
+    width: 25%;
+}
+
+.back {
+    margin-top: 5%;
+    background-color:#eed2cd;
+    color:#12304c;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+.boutonAdopter {
+    border: none;
+    background-color: #12304c;
+    color: white;
+} 
