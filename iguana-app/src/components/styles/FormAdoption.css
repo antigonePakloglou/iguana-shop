@@ -8,9 +8,45 @@
 
 }
 
-.elementForm{
-    
+.textLabel {
+    font-family: "Bernard MT Condensed", sans-serif;
+    font-size: 16px;
+    text-decoration: underline;
+  }
+
+.textInput {
+font-family: "Bernard MT Condensed", sans-serif;
+font-size: 20px;
+text-decoration: underline;
+border-radius: 50px;
+border-color: none;
 }
+
+.backForm {
+    margin-top: 2%;
+    background-color:#eed2cd;
+    color:#12304c;
+}
+
+.formStyle{
+    background-color:  #bdc5c9;
+    border-radius: 20px;
+    margin-top: 8%;
+    width: 80%;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 33px;
+   
+    display: block;
+  }
+
+.image {
+    margin-left:10px ;
+width: 4%;
+}
+
 
 .detailIguaneImage{
     width: 30%;

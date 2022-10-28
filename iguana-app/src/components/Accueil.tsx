@@ -11,6 +11,7 @@ import './styles/Accueil.css';
 import { Iguane } from './Iguane';
 import { DescIguane } from './IguaneDesc';
 import { FormAdopt } from './FormAdoption';
+import { Infos } from './Infos';
 
 
 export const Header = ({}) => { 
@@ -21,6 +22,7 @@ export const Header = ({}) => {
           <Navbar.Brand href="/" className='textFamily colorTextNav'>Iguana SPA</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="/nosIguanes" className='colorTextNav'>Nos iguanes</Nav.Link>
+            <Nav.Link href="/infoAvantAdoption" className='colorTextNav'>Avant d'adpoter</Nav.Link>
             <Nav.Link href="/descIguane" className='colorTextNav'>Description</Nav.Link>
             
           </Nav>
@@ -31,6 +33,7 @@ export const Header = ({}) => {
       <Route path='/nosIguanes' element={ <Iguane/>}></Route>
       <Route path='/descIguane' element={ <DescIguane/>}></Route>
       <Route path='/iguane/catherine' element={< DescIguane />}></Route>
+      <Route path='/infoAvantAdoption' element={< Infos />}></Route>
       <Route path='/adopter/catherine' element={< FormAdopt />}></Route>
       
       </Routes>
@@ -53,6 +56,11 @@ export const Presentation = ({}) => {
           <span className='lieux'>Lyon</span>
           <span className='lieux'>Lyon</span>
         </div>
+      </div>
+      <div className='textFamily textRepartition'>
+        Important :
+
+        Déclaration de détention d'animaux d'espèces non domestiques (Formulaire 15967*01)
       </div>
     </Card>
   );
