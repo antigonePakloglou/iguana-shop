@@ -57,4 +57,13 @@
   border-radius: 50px;
   }
 
+.soustitrePage {
+  font-family: "Felix Titling", sans-serif;
+  background-color: #44697f;
+  color : #fefeff;
+  border-radius: 50px;
+  padding: 5px;
+  
+  } 
+
 .textVille {text-decoration: underline;}

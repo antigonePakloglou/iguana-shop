@@ -4,9 +4,10 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Catherine from '../images/catherine.jpg';
+import { IguaneProps } from './Iguane';
 import {Link} from "react-router-dom";
 
-export const DescIguane = ({}) => {
+export const DescIguane = (/* {id,nom,couleur,taille,poids,refuge}: IguaneProps */ ) => {
     return (
            
        
@@ -16,27 +17,27 @@ export const DescIguane = ({}) => {
                 <Row>
                     <Col className=''>
                         <Col className='textTitresColonnes margesTitleCol'>Nom</Col>
-                        <Col className='textColonnes margesColonnes'>Catherine</Col>
+                        <Col className='textColonnes margesColonnes'>Test</Col>
                     </Col>
                     <Col className=''>
                         <Col className='textTitresColonnes margesTitleCol'>Couleur</Col>
-                        <Col className='textColonnes margesColonnes'>Verte</Col>
+                        <Col className='textColonnes margesColonnes'>Test</Col>
                     </Col>
                 </Row>
                 <Row>
                     <Col className=''>
                         <Col className='textTitresColonnes margesTitleCol'>Taille</Col>
-                        <Col className='textColonnes margesColonnes'>100cm</Col>
+                        <Col className='textColonnes margesColonnes'>Test cm</Col>
                     </Col>
                     <Col className=''>
                         <Col className='textTitresColonnes margesTitleCol'>Poids</Col>
-                        <Col className='textColonnes margesColonnes'>2 kg</Col>
+                        <Col className='textColonnes margesColonnes'>Test kg</Col>
                     </Col>
                 </Row>
                 <Row>
                     <Col className=''>
                         <Col className='textTitresColonnes margesTitleCol'>Refuge</Col>
-                        <Col className='textColonnes margesColonnes'>Lyon</Col>
+                        <Col className='textColonnes margesColonnes'>Test</Col>
                     </Col>
                     <Col className=''>
                         <Col className='textTitresColonnes margesTitleCol'></Col>

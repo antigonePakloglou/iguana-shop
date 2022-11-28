@@ -8,10 +8,11 @@ import {
   Route,
 } from "react-router-dom";
 import './styles/Accueil.css';
-import { Iguane } from './Iguane';
+import { AllIguanas } from './AllIguanas';
 import { DescIguane } from './IguaneDesc';
 import { FormAdopt } from './FormAdoption';
 import { Infos } from './Infos';
+import {Link} from "react-router-dom";
 
 
 export const Header = ({}) => { 
@@ -24,14 +25,15 @@ export const Header = ({}) => {
             <Nav.Link href="/nosIguanes" className='colorTextNav'>Nos iguanes</Nav.Link>
             <Nav.Link href="/infoAvantAdoption" className='colorTextNav'>Avant d'adpoter</Nav.Link>
             <Nav.Link href="/descIguane" className='colorTextNav'>Description</Nav.Link>
-            
+            <Nav.Link href="/descIguane" className='colorTextNav'>Connexion</Nav.Link>
+          
           </Nav>
         </Container>
       </Navbar>
       <Routes>
       <Route path='/*' element={ <Presentation/>}></Route>
-      <Route path='/nosIguanes' element={ <Iguane/>}></Route>
-      <Route path='/descIguane' element={ <DescIguane/>}></Route>
+      <Route path='/nosIguanes' element={ <AllIguanas/>}></Route>
+      {/* <Route path='/descIguane' element={ <DescIguane/>}></Route> */}
       <Route path='/iguane/catherine' element={< DescIguane />}></Route>
       <Route path='/infoAvantAdoption' element={< Infos />}></Route>
       <Route path='/adopter/catherine' element={< FormAdopt />}></Route>
@@ -58,9 +60,10 @@ export const Presentation = ({}) => {
         </div>
       </div>
       <div className='textFamily textRepartition'>
+        <hr/>
         Important :
 
-        Déclaration de détention d'animaux d'espèces non domestiques (Formulaire 15967*01)
+       Veuillez consulter la page <Link to={`/infoAvantAdoption`} style={{color : '#302E2E' }}>"Avant d'adopter"</Link> avant d'effectuer des demarches sur notre site.
       </div>
     </Card>
   );
