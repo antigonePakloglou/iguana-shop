@@ -31,7 +31,7 @@ export const FormAdopt = ({}) => {
               <Col>
                 <div className="input-group">
                   <label>
-                    <span className='textLabel'>Déclaration de détention</span><br/>
+                    <span className='textLabel'>Numéro de déclaration de détention</span><br/>
                       (Obligatoire pour adopter)</label><br/>
                     <input className="textInput"  type="number" name="Numero" />
                 </div>

@@ -5,26 +5,24 @@ import {Container, Row, Col} from 'react-bootstrap';
 
 export const AllIguanas = ({}) => {
      //recupération données
-     let [iguanes, setIguanes] = useState( [{id: 1, nom: 'Catherine', couleur : 'Verte', taille: 168 , poids : 7, refuge : 'Lyon'}, 
+     let [iguanes, setIguanes] = useState( [ {id: 1, nom: 'Catherine', couleur : 'Verte', taille: 168 , poids : 7, refuge : 'Lyon'}, 
      {id:2, nom: 'Preston', couleur : 'Jaune', taille: 190 , poids : 13, refuge : 'Macon'},
      {id:3, nom: 'Rodriguez', couleur : 'Orange', taille: 120 , poids : 3, refuge : 'Lyon'},
-     {id:4, nom: 'M.Peanuts', couleur : 'Rouge', taille: 172 , poids : 9, refuge : 'Paris'}
+     {id:4, nom: 'M.Peanuts', couleur : 'Rouge', taille: 172 , poids : 9, refuge : 'Paris'} 
      ])
     
     
     //affichage selon données
     let affichage;
     let titre;
-    if (iguanes.length !== null) {
+    if (iguanes.length > 0) {
         titre = 'Les iguanes disponibles à l\'adoption';
         affichage =  
         <Row>
                
         {  iguanes.map((p)=> (
                 <Col key={p.id}>
-                  
                         <Iguane  {...p} />
-                   
                 </Col>
             )) } 
         </Row>    ;
