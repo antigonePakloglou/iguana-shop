@@ -24,7 +24,6 @@ export const Header = ({}) => {
           <Nav className="me-auto">
             <Nav.Link href="/nosIguanes" className='colorTextNav'>Nos iguanes</Nav.Link>
             <Nav.Link href="/infoAvantAdoption" className='colorTextNav'>Avant d'adpoter</Nav.Link>
-            <Nav.Link href="/descIguane" className='colorTextNav'>Description</Nav.Link>
             <Nav.Link href="/descIguane" className='colorTextNav'>Connexion</Nav.Link>
           
           </Nav>
@@ -33,10 +32,9 @@ export const Header = ({}) => {
       <Routes>
       <Route path='/*' element={ <Presentation/>}></Route>
       <Route path='/nosIguanes' element={ <AllIguanas/>}></Route>
-      {/* <Route path='/descIguane' element={ <DescIguane/>}></Route> */}
-      <Route path='/iguane/catherine' element={< DescIguane />}></Route>
+      <Route path='/iguane/:id' element={< DescIguane />}></Route> 
       <Route path='/infoAvantAdoption' element={< Infos />}></Route>
-      <Route path='/adopter/catherine' element={< FormAdopt />}></Route>
+      <Route path='/adopter/iguane/:id' element={< FormAdopt />}></Route>
       
       </Routes>
     </Router>

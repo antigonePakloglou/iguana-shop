@@ -1,16 +1,37 @@
 import '../App.css';
 import './styles/FormAdoption.css';
 import './styles/IguaneDesc.css';
+import {importImages, concatImgName} from './fonctions';
+import {useState, useEffect } from 'react';
+import {useParams} from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import Catherine from '../images/catherine.jpg';
+
 import {Container, Row, Col, Card} from 'react-bootstrap';
+import axios from 'axios';
 export const FormAdopt = ({}) => {
+
+  //recupération données
+  let [iguane, setIguane] = useState([])
+  const { id } = useParams();
+
+  //appel api 
+  useEffect(() => {
+    //info de l'iguane
+    axios.get(`http://localhost:3000/api/iguane/${id}`).then(resp => {
+      setIguane(resp.data);
+    });
+   }, []); 
+
+  //recupération des images
+  const images = importImages(require.context('../../src/images/iguanes', false, /\.(png|jpe?g|svg)$/));
+  let img = concatImgName(id);
+
   return (
    
     <form >
       <br/>
-      <h1 className='titrePage'>Formulaire d'adoption de <span style={{textDecoration : 'underline'}}>Catherine  <img src={Catherine} alt="plat" className='image' /></span> </h1>
+      <h1 className='titrePage'>Formulaire d'adoption de <span style={{textDecoration : 'underline'}}>{iguane['nom']}  { <img src={images[img]} alt="plat" className='image' /> }</span> </h1>
      
       <Container className='backForm'>
         <Row> 
