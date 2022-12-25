@@ -11,6 +11,7 @@ import './styles/Accueil.css';
 import { AllIguanas } from './AllIguanas';
 import { DescIguane } from './IguaneDesc';
 import { FormAdopt } from './FormAdoption';
+import { Admin } from './Admin';
 import { Infos } from './Infos';
 import {Link} from "react-router-dom";
 
@@ -23,7 +24,7 @@ export const Header = ({}) => {
           <Navbar.Brand href="/nosIguanes" className='textFamily colorTextNav'>Iguana SPA</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="/infoAvantAdoption" className='colorTextNav'>Avant d'adpoter</Nav.Link>
-            <Nav.Link href="/descIguane" className='colorTextNav'>Connexion</Nav.Link>
+            <Nav.Link href="/adminGestionAdoptions" className='colorTextNav'>Gestion adoption (admin)</Nav.Link>
           
           </Nav>
         </Container>
@@ -34,6 +35,7 @@ export const Header = ({}) => {
       <Route path='/iguane/:id' element={< DescIguane />}></Route> 
       <Route path='/infoAvantAdoption' element={< Infos />}></Route>
       <Route path='/adopter/iguane/:id' element={< FormAdopt />}></Route>
+      <Route path='/adminGestionAdoptions' element={< Admin />}></Route>
       
       </Routes>
     </Router>
