@@ -13,7 +13,6 @@ export const DescIguane = () => {
 
     //recupération données
     let [iguane, setIguane] = useState([])
-    let [ville, setVille] = useState([])
     let [page, setPage] = useState(1)
     const { id } = useParams();
    
@@ -27,10 +26,6 @@ export const DescIguane = () => {
         axios.get(`http://localhost:3000/api/iguane/${id}`).then(resp => {
             setIguane(resp.data);
         });
-        //refuge de l'iguane
-        axios.get(`http://localhost:3000/api/refuge/${iguane['refugeId']}`).then(resp => {
-            setVille(resp.data);
-          });
        }, [page]); 
 
 
@@ -60,17 +55,9 @@ export const DescIguane = () => {
                         <Col className='textColonnes margesColonnes'>{iguane['poids']} kg</Col>
                     </Col>
                 </Row>
-                <Row>
-                    <Col className=''>
-                        <Col className='textTitresColonnes margesTitleCol'>Refuge</Col>
-                        <Col className='textColonnes margesColonnes'>{ville['nom']}</Col>
-                    </Col>
-                    <Col className=''>
-                        <Col className='textTitresColonnes margesTitleCol'></Col>
-                        <Col className='textColonnes margesColonnes'>  <Link to={`/adopter/iguane/${id}`} style={{color : '#302E2E' }}><button type="submit" className='boutonAdopter'>DEMANDE <br/>D'ADOPTION</button></Link>  </Col>
-                        
-                    </Col>
-                    <Col className='textColonnes margesColonnes'>  <Link to={`/nosIguanes`} style={{color : '#302E2E' }}><button type="submit" className='boutonAdopter'>Consulter nos <br/>autres iguanes</button></Link>  </Col>
+                <Row className='imageStyle'>
+                    <Link to={`/adopter/iguane/${id}`} style={{color : '#302E2E' }}><button type="submit" className='boutonAdopter'>DEMANDE <br/>D'ADOPTION</button></Link>   
+                    <Link to={`/nosIguanes`} style={{color : '#302E2E', marginBottom : '10px', marginTop : '10px' }}><button type="submit" className='boutonAdopter'>Consulter nos <br/>autres iguanes</button></Link>  
                 </Row>
             </Container>
             
