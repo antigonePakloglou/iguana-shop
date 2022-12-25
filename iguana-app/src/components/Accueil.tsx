@@ -11,7 +11,7 @@ import './styles/Accueil.css';
 import { AllIguanas } from './AllIguanas';
 import { DescIguane } from './IguaneDesc';
 import { FormAdopt } from './FormAdoption';
-import { Admin } from './Admin';
+import { AllDemandesAdoption } from './AllDemandesAdoption';
 import { Infos } from './Infos';
 import {Link} from "react-router-dom";
 
@@ -35,7 +35,7 @@ export const Header = ({}) => {
       <Route path='/iguane/:id' element={< DescIguane />}></Route> 
       <Route path='/infoAvantAdoption' element={< Infos />}></Route>
       <Route path='/adopter/iguane/:id' element={< FormAdopt />}></Route>
-      <Route path='/adminGestionAdoptions' element={< Admin />}></Route>
+      <Route path='/adminGestionAdoptions' element={< AllDemandesAdoption />}></Route>
       
       </Routes>
     </Router>

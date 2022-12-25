@@ -1,21 +1,21 @@
 import '../App.css'
 import './styles/AllIguanas.css';
-import { Iguane, IguaneProps } from './Iguane';
+import { DemandeAdoption, DemandeProps } from './DemandesAdoption';
 import {useState, useEffect } from 'react';
 import {Container, Row, Col} from 'react-bootstrap';
 import axios from 'axios';
 
 
-export const Admin = ({}) => {
+export const AllDemandesAdoption = ({}) => {
 
   //recupération données
-  let [iguanes, setIguanes] = useState([])
+  let [demandesAdoption, setDemandesAdoption] = useState([])
   let [page, setPage] = useState(1)
  
   //appel api  
   useEffect(() => {
-      axios.get(`http://localhost:3000/api/iguane`).then(resp => {
-      setIguanes(resp.data);
+      axios.get(`http://localhost:3000/api/demandeAdoption`).then(resp => {
+        setDemandesAdoption(resp.data);
       });
       }, [page]); 
 
@@ -23,26 +23,28 @@ export const Admin = ({}) => {
   let affichage;
   let titre;
    
-  if (iguanes.length > 0) {
+  if (demandesAdoption.length > 0) {
     titre = 'Les demandes d\'adoption';
     affichage =  
     <Row>  
-      {  iguanes.map((p  : IguaneProps)=> (
+      {  demandesAdoption.map((p  : DemandeProps)=> (
         <Col key={p.id}>
-          <Iguane  {...p} />
+          <DemandeAdoption  {...p} />
         </Col>
         )) 
       } 
     </Row>;
   } else {
-      titre = 'Aucun iguanes disponibles à l\'adoption pour le moment';
+      titre = 'Aucunes demande d\'adoption pour le moment';
       affichage = '';
     }  
 
     return ( 
-      
-      <Container>
        
+      <Container>
+        <br/>
+        <h1 className='titrePage'>{titre}</h1>
+        {affichage}
       </Container> 
     );
   }

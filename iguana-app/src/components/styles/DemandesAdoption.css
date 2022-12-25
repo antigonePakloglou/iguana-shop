@@ -1,0 +1,21 @@
+.textDemande {
+    font-family: "Bernard MT Condensed", sans-serif;
+    font-size: 15px;
+  }
+
+.textTitreDemande {
+font-family: "Felix Titling", sans-serif;
+font-size: 20px;
+
+}
+
+.boutonEye{
+  border: none;
+  background: transparent;
+}
+
+.card {
+  margin-top: 10px;
+}
+
+

@@ -44,7 +44,7 @@ export const FormAdopt = ({}) => {
               <Col>
                 <div className="input-group">
                   <label className='textLabel'>Numéro de télephone<br/>
-                  (+33658781972)</label><br/>
+                  (0658267362)</label><br/>
                   <input className="textInput"  type="number" name="Numero" />
                 </div>
               </Col> 
