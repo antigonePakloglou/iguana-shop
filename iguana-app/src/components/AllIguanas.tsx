@@ -36,7 +36,7 @@ export const AllIguanas = ({}) => {
     </Row>;
   } else {
       titre = 'Aucun iguanes disponibles à l\'adoption pour le moment';
-      affichage = 'add a picture';
+      affichage = '';
     }  
 
     return ( 
