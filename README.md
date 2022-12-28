@@ -1,6 +1,6 @@
 ## Installation et lancement
 Avant le premier lancement de l'application assurez vous d'avoir configurer votre backend.
-Pour lancer l'application executer la commande ci-dessous afin de récuperer les dépendances du projet. Le dossier node_modules sera ainsi créer.
+Pour lancer l'application, placez-vous dans le répertoire "iguana-app" et executer la commande ci-dessous afin de récuperer les dépendances du projet. Le dossier node_modules sera ainsi créer.
 ```bash
 $ npm install
 ```
