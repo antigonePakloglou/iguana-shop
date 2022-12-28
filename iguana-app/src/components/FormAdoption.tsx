@@ -4,16 +4,25 @@ import './styles/IguaneDesc.css';
 import {importImages, concatImgName} from './fonctions';
 import {useState, useEffect } from 'react';
 import {useParams} from "react-router-dom";
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-
-import {Container, Row, Col, Card} from 'react-bootstrap';
+import {Container, Row, Col} from 'react-bootstrap';
+import {useNavigate } from "react-router-dom";
 import axios from 'axios';
+
+
+
 export const FormAdopt = ({}) => {
 
   //recupération données
   let [iguane, setIguane] = useState([])
   const { id } = useParams();
+  let [demandeAdoption, setDemandeAdoption] = useState({
+    email: '',
+    telephone: 0,
+    numero_declaration: 0,
+    iguaneId : id
+  }
+    )
+  let navigate = useNavigate()
 
   //appel api 
   useEffect(() => {
@@ -27,25 +36,33 @@ export const FormAdopt = ({}) => {
   const images = importImages(require.context('../../src/images/iguanes', false, /\.(png|jpe?g|svg)$/));
   let img = concatImgName(id);
 
+  //recupère les données du formulaire au clic du bouton
+  function postRequest (){
+    async function addDemandeAdoption() {
+        await axios.post('http://localhost:3000/api/demandeAdoption', demandeAdoption);
+        navigate('/');
+    }
+    addDemandeAdoption();  
+}
+
   return (
    
-    <form >
+    <form id='formulaire' onSubmit={ e => {e.preventDefault(); postRequest() }}>
       <br/>
       <h1 className='titrePage'>Formulaire d'adoption de <span style={{textDecoration : 'underline'}}>{iguane['nom']}  { <img src={images[img]} alt="plat" className='image' /> }</span> </h1>
-     
       <Container className='backForm'>
         <Row> 
           <Col>
             <div className="input-group">
                 <label className='textLabel'>Email</label><br/>
-                <input className="textInput"  type="text" name="Email" />
+                <input className="textInput" required type="email" name="Email" onChange={(e) => { demandeAdoption.email =e.target.value ;}}/>
             </div>
             <Row>    
               <Col>
                 <div className="input-group">
-                  <label className='textLabel'>Numéro de télephone<br/>
-                  (0658267362)</label><br/>
-                  <input className="textInput"  type="number" name="Numero" />
+                  <label className='textLabel'>Numéro de télephone</label><br/>
+                      (+33768992763)<br/>
+                  <input className="textInput" required type="number" name="Numero" onChange={(e) => { demandeAdoption.telephone = parseInt(e.target.value) ;}}/>
                 </div>
               </Col> 
             </Row>
@@ -55,7 +72,7 @@ export const FormAdopt = ({}) => {
                   <label>
                     <span className='textLabel'>Numéro de déclaration de détention</span><br/>
                       (Obligatoire pour adopter)</label><br/>
-                    <input className="textInput"  type="number" name="Numero" />
+                    <input className="textInput" required  type="number" name="Declaration" onChange={(e) => { demandeAdoption.numero_declaration = parseInt(e.target.value) ;}}/>
                 </div>
               </Col> 
             </Row>
@@ -74,5 +91,14 @@ export const FormAdopt = ({}) => {
       
     </form>
   );
+
 }
 
+export interface AdoptionDemandeProps {
+  email: string ;
+  telephone : number;
+  declarationNum: number;
+  iguaneId : number;
+
+  
+}
