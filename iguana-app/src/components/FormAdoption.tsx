@@ -19,7 +19,8 @@ export const FormAdopt = ({}) => {
     email: '',
     telephone: 0,
     numero_declaration: 0,
-    iguaneId : id
+    iguaneId : id,
+    isEligible : 0
   }
     )
   let navigate = useNavigate()
@@ -43,7 +44,7 @@ export const FormAdopt = ({}) => {
         navigate('/');
     }
     addDemandeAdoption();  
-}
+  }
 
   return (
    
@@ -61,7 +62,7 @@ export const FormAdopt = ({}) => {
               <Col>
                 <div className="input-group">
                   <label className='textLabel'>Numéro de télephone</label><br/>
-                      (+33768992763)<br/>
+                      (0768992763)<br/>
                   <input className="textInput" required type="number" name="Numero" onChange={(e) => { demandeAdoption.telephone = parseInt(e.target.value) ;}}/>
                 </div>
               </Col> 
@@ -99,6 +100,4 @@ export interface AdoptionDemandeProps {
   telephone : number;
   declarationNum: number;
   iguaneId : number;
-
-  
 }

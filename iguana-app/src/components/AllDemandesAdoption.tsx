@@ -10,14 +10,14 @@ export const AllDemandesAdoption = ({}) => {
 
   //recupération données
   let [demandesAdoption, setDemandesAdoption] = useState([])
-  let [page, setPage] = useState(1)
+
  
   //appel api  
   useEffect(() => {
       axios.get(`http://localhost:3000/api/demandeAdoption`).then(resp => {
         setDemandesAdoption(resp.data);
       });
-      }, [page]); 
+      }); 
 
   //affichage selon données
   let affichage;

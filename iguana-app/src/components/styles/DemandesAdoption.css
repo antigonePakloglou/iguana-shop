@@ -10,9 +10,12 @@ font-size: 20px;
 }
 
 .boutonEye{
-  border: none;
+  border: 1px black solid;
   background: transparent;
+  margin-bottom: 5px;
+  background-color: #eed2cd;
 }
+
 
 .card {
   margin-top: 10px;
